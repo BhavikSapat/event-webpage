@@ -3,6 +3,55 @@
 import Image from 'next/image';
 import React, { useState, useRef } from 'react';
 
+// ... all your imports and other code remain the same ...
+
+export default function LuminaEventsSPA({ data }: { data?: any }) {
+  // ... all your data extraction code remains the same ...
+
+  // State
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    eventType: 'Wedding Planning',
+    eventDate: '',
+    message: ''
+  });
+
+  // ✅ FIXED: Add proper type annotation
+  const testimonialsRef = useRef<HTMLDivElement | null>(null);
+
+  // ✅ FIXED: Add null check with optional chaining
+  const scrollTestimonials = (direction: 'left' | 'right') => {
+    if (testimonialsRef.current) {
+      const { scrollLeft, clientWidth } = testimonialsRef.current;
+      const scrollAmount = direction === 'left' 
+        ? -(clientWidth / (window.innerWidth >= 768 ? 3 : 1)) 
+        : (clientWidth / (window.innerWidth >= 768 ? 3 : 1));
+      
+      testimonialsRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  // ... rest of your code remains the same ...
+}
+🔧 Alternative - Using as any (Quick Fix):
+If you want a quick fix without proper typing:
+
+tsx
+const testimonialsRef = useRef<any>(null);
+But the proper solution with HTMLDivElement is recommended.
+
+📋 Complete Fixed File:
+Here's the complete fixed EventPlanner.tsx file with the type fix:
+
+tsx
+'use client';
+
+import Image from 'next/image';
+import React, { useState, useRef } from 'react';
+
 // --- ICON IMPORTS ---
 import { FaInstagram, FaPinterest, FaFacebook, FaXTwitter } from 'react-icons/fa6';
 import { 
@@ -313,8 +362,10 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
     message: ''
   });
 
-  const testimonialsRef = useRef(null);
+  // ✅ FIXED: Added proper type annotation
+  const testimonialsRef = useRef<HTMLDivElement | null>(null);
 
+  // ✅ FIXED: scrollTestimonials with proper null check
   const scrollTestimonials = (direction: 'left' | 'right') => {
     if (testimonialsRef.current) {
       const { scrollLeft, clientWidth } = testimonialsRef.current;
