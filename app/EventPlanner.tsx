@@ -141,7 +141,20 @@ const safeParseTestimonials = (data: any, defaultData: any[]): any[] => {
   }
   return defaultData;
 };
-
+const safeParseHeroServices = (data: any, defaultData: any[]): any[] => {
+  if (Array.isArray(data) && data.length > 0) return data;
+  if (typeof data === "string" && data.trim() !== "") {
+    try {
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    } catch {
+      // Handle comma-separated list like "Bhavik Sapat, Bhakti Sapat"
+      const items = data.split(",").map((item) => item.trim()).filter(Boolean);
+      if (items.length > 0) return items;
+    }
+  }
+  return defaultData;
+};
 export default function LuminaEventsSPA({ data }: { data?: any }) {
   console.log("Received data:", data);
 
@@ -188,8 +201,7 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
     "Corporate Events",
     "Private Celebrations"
   ];
-  const heroServices = safeParseArray(heroSection?.services, defaultHeroServices);
-
+  const heroServices = safeParseHeroServices(heroSection?.services, defaultHeroServices);
   // About Section
   const aboutBadge = aboutSection.badge || "The Founder & Agency";
   const aboutTitle = aboutSection.title || "Curating moments that linger in memory long after the music fades.";
@@ -395,7 +407,7 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
         <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-64 xl:w-72 bg-[#FAF8F5] border-r border-[#E6E0D8] z-40 flex-col justify-between p-10 select-none">
           {/* Logo & Name */}
           <div className="space-y-3">
-            <div className="w-12 h-12 rounded-full border border-[#C5A880] flex items-center justify-center font-serif text-xl font-light text-[#1A1A1A] tracking-widest mx-auto">
+            <div className="w-12 h-12 flex items-center justify-center font-serif text-xl font-light text-[#1A1A1A] tracking-widest mx-auto">
               <Image src={companyLogo} width={50} height={50} unoptimized alt={companyName} />
             </div>
             <div className="text-center">
@@ -906,7 +918,7 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
               
               <div className="space-y-4">
                 <div className='flex gap-3 items-center'>
-                  <div className="w-8 h-8 rounded-full border border-[#C5A880] flex items-center justify-center font-serif text-sm font-semibold tracking-widest text-[#1A1A1A]">
+                  <div className="w-8 h-8 flex items-center justify-center font-serif text-sm font-semibold tracking-widest text-[#1A1A1A]">
                     <Image src={companyLogo} width={50} height={50} unoptimized alt={companyName} />
                   </div>
                   <div className="font-serif text-2xl tracking-widest text-[#1A1A1A]">
