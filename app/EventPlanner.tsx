@@ -3,55 +3,6 @@
 import Image from 'next/image';
 import React, { useState, useRef } from 'react';
 
-// ... all your imports and other code remain the same ...
-
-export default function LuminaEventsSPA({ data }: { data?: any }) {
-  // ... all your data extraction code remains the same ...
-
-  // State
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: 'Wedding Planning',
-    eventDate: '',
-    message: ''
-  });
-
-  // ✅ FIXED: Add proper type annotation
-  const testimonialsRef = useRef<HTMLDivElement | null>(null);
-
-  // ✅ FIXED: Add null check with optional chaining
-  const scrollTestimonials = (direction: 'left' | 'right') => {
-    if (testimonialsRef.current) {
-      const { scrollLeft, clientWidth } = testimonialsRef.current;
-      const scrollAmount = direction === 'left' 
-        ? -(clientWidth / (window.innerWidth >= 768 ? 3 : 1)) 
-        : (clientWidth / (window.innerWidth >= 768 ? 3 : 1));
-      
-      testimonialsRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  // ... rest of your code remains the same ...
-}
-🔧 Alternative - Using as any (Quick Fix):
-If you want a quick fix without proper typing:
-
-tsx
-const testimonialsRef = useRef<any>(null);
-But the proper solution with HTMLDivElement is recommended.
-
-📋 Complete Fixed File:
-Here's the complete fixed EventPlanner.tsx file with the type fix:
-
-tsx
-'use client';
-
-import Image from 'next/image';
-import React, { useState, useRef } from 'react';
-
 // --- ICON IMPORTS ---
 import { FaInstagram, FaPinterest, FaFacebook, FaXTwitter } from 'react-icons/fa6';
 import { 
@@ -70,7 +21,7 @@ import {
   ArrowRight as ArrowRightNavIcon 
 } from 'lucide-react';
 
-// --- WRAPPER COMPONENTS TO PRESERVE EXACT STYLING & CLASSES ---
+// --- WRAPPER COMPONENTS ---
 const IconInstagram = ({ className = "w-6 h-6 lg:w-4 lg:h-4" }) => <FaInstagram className={className} />;
 const IconPinterest = ({ className = "w-6 h-6 lg:w-4 lg:h-4" }) => <FaPinterest className={className} />;
 const IconFacebook = ({ className = "w-6 h-6 lg:w-4 lg:h-4" }) => <FaFacebook className={className} />;
@@ -206,7 +157,7 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
   const footerSection = data?.footerSection || {};
   const socialLinks = data?.socialLinks || {};
 
-  // Default values - Basic Info (Single source of truth)
+  // Default values - Basic Info
   const companyName = basicInfo.companyName || "Lumina";
   const companyLogo = basicInfo.logo || "https://bitbusters.netlify.app/logo.png";
   const companyTagline = basicInfo.tagline || "Events & Luxury";
@@ -231,7 +182,6 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
   const heroImage = heroSection.image ||
     "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop";
 
-  // Hero Services List
   const defaultHeroServices = [
     "Luxury Event Planning",
     "Wedding Planning",
@@ -297,7 +247,6 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
   ];
   const whyUsItems = safeParseWhyUs(whyUsSection?.items, defaultWhyUs);
 
-  // Why Us Icons (Hardcoded, cycled through)
   const whyUsIcons = [IconSparkles, IconDiamond, IconPalette, IconShieldCheck];
 
   // Portfolio Section
@@ -345,7 +294,7 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
   const footerCopyright = footerSection.copyright || `© ${new Date().getFullYear()} Lumina Events. All Rights Reserved.`;
   const footerTagline = footerSection.tagline || "Crafted with timeless elegance.";
 
-  // Social Links (Conditional Rendering)
+  // Social Links - Conditional
   const instagram = socialLinks.instagram || "";
   const pinterest = socialLinks.pinterest || "";
   const facebook = socialLinks.facebook || "";
@@ -362,13 +311,11 @@ export default function LuminaEventsSPA({ data }: { data?: any }) {
     message: ''
   });
 
-  // ✅ FIXED: Added proper type annotation
   const testimonialsRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ FIXED: scrollTestimonials with proper null check
   const scrollTestimonials = (direction: 'left' | 'right') => {
     if (testimonialsRef.current) {
-      const { scrollLeft, clientWidth } = testimonialsRef.current;
+      const { clientWidth } = testimonialsRef.current;
       const scrollAmount = direction === 'left' 
         ? -(clientWidth / (window.innerWidth >= 768 ? 3 : 1)) 
         : (clientWidth / (window.innerWidth >= 768 ? 3 : 1));
