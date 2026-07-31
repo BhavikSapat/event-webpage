@@ -1,0 +1,452 @@
+{
+  "tabs": {
+    "basicInfo": {
+      "type": "section",
+      "label": "Basic Information",
+      "fields": [
+        {
+          "name": "companyName",
+          "type": "text",
+          "label": "Company Name",
+          "placeholder": "Lumina"
+        },
+        {
+          "name": "logo",
+          "type": "image",
+          "label": "Company Logo URL",
+          "placeholder": "Image URL"
+        },
+        {
+          "name": "tagline",
+          "type": "text",
+          "label": "Tagline",
+          "placeholder": "Events & Luxury"
+        }
+      ]
+    },
+    "heroSection": {
+      "type": "section",
+      "label": "Hero Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "Tailored Perfection"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Hero Title",
+          "placeholder": "Crafting"
+        },
+        {
+          "name": "highlight",
+          "type": "text",
+          "label": "Highlighted Text",
+          "placeholder": "Unforgettable"
+        },
+        {
+          "name": "subtitle",
+          "type": "text",
+          "label": "Subtitle",
+          "placeholder": "Celebrations With Timeless Elegance"
+        },
+        {
+          "name": "buttonText",
+          "type": "text",
+          "label": "Button Text",
+          "placeholder": "Plan Your Event"
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "label": "Hero Background Image URL",
+          "placeholder": "Image URL"
+        },
+        {
+          "name": "services",
+          "type": "dynamic-array",
+          "label": "Hero Services List",
+          "itemFields": [
+            {
+              "name": "service",
+              "type": "text",
+              "label": "Service Name",
+              "placeholder": "Luxury Event Planning"
+            }
+          ],
+          "placeholder": "Luxury Event Planning, Wedding Planning, Corporate Events, Private Celebrations"
+        }
+      ]
+    },
+    "socialLinks": {
+      "type": "section",
+      "label": "Social Links",
+      "fields": [
+        {
+          "name": "instagram",
+          "type": "text",
+          "label": "Instagram URL",
+          "placeholder": "https://instagram.com/"
+        },
+        {
+          "name": "pinterest",
+          "type": "text",
+          "label": "Pinterest URL",
+          "placeholder": "https://pinterest.com/"
+        },
+        {
+          "name": "facebook",
+          "type": "text",
+          "label": "Facebook URL",
+          "placeholder": "https://facebook.com/"
+        },
+        {
+          "name": "twitter",
+          "type": "text",
+          "label": "Twitter/X URL",
+          "placeholder": "https://twitter.com/"
+        }
+      ]
+    },
+    "aboutSection": {
+      "type": "section",
+      "label": "About Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "The Founder & Agency"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "About Title",
+          "placeholder": "Curating moments that linger in memory long after the music fades."
+        },
+        {
+          "name": "description",
+          "type": "textarea",
+          "label": "About Description",
+          "placeholder": "Founded by Victoria Lumina, our agency approaches event production with the eye of an art director and the precision of a master craftsman."
+        },
+        {
+          "name": "subDescription",
+          "type": "textarea",
+          "label": "About Sub Description",
+          "placeholder": "From intimate coastal gatherings to grand estate weddings, every detail is styled to reflect your unique story."
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "label": "About Image URL",
+          "placeholder": "Image URL"
+        },
+        {
+          "name": "stat1Number",
+          "type": "text",
+          "label": "Stat 1 Number",
+          "placeholder": "12+"
+        },
+        {
+          "name": "stat1Label",
+          "type": "text",
+          "label": "Stat 1 Label",
+          "placeholder": "Years Experience"
+        },
+        {
+          "name": "stat2Number",
+          "type": "text",
+          "label": "Stat 2 Number",
+          "placeholder": "350+"
+        },
+        {
+          "name": "stat2Label",
+          "type": "text",
+          "label": "Stat 2 Label",
+          "placeholder": "Events Planned"
+        },
+        {
+          "name": "stat3Number",
+          "type": "text",
+          "label": "Stat 3 Number",
+          "placeholder": "98%"
+        },
+        {
+          "name": "stat3Label",
+          "type": "text",
+          "label": "Stat 3 Label",
+          "placeholder": "Happy Clients"
+        }
+      ]
+    },
+    "whyUsSection": {
+      "type": "dynamic-section",
+      "label": "Why Choose Us Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "The Lumina Distinction"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Section Title",
+          "placeholder": "Why Discerning Clients Choose Us"
+        },
+        {
+          "name": "subtitle",
+          "type": "text",
+          "label": "Subtitle",
+          "placeholder": "Uncompromising Standards & Elegance"
+        },
+        {
+          "name": "items",
+          "type": "dynamic-array",
+          "label": "Why Us Items",
+          "itemFields": [
+            {
+              "name": "number",
+              "type": "text",
+              "label": "Number",
+              "placeholder": "01"
+            },
+            {
+              "name": "title",
+              "type": "text",
+              "label": "Title",
+              "placeholder": "Personal Planning"
+            },
+            {
+              "name": "desc",
+              "type": "textarea",
+              "label": "Description",
+              "placeholder": "Tailored specifically to your lifestyle, taste, and personal narrative."
+            }
+          ],
+          "placeholder": "01 | Personal Planning | Tailored specifically to your lifestyle, taste, and personal narrative., 02 | Luxury Vendors | Access to our curated network of world-class florists, chefs, and artisans."
+        }
+      ]
+    },
+    "footerSection": {
+      "type": "section",
+      "label": "Footer Section",
+      "fields": [
+        {
+          "name": "description",
+          "type": "textarea",
+          "label": "Footer Description",
+          "placeholder": "Full-service luxury event design, destination wedding planning, and high-end production for global clientele."
+        },
+        {
+          "name": "copyright",
+          "type": "text",
+          "label": "Copyright Text",
+          "placeholder": "© 2026 Lumina Events. All Rights Reserved."
+        },
+        {
+          "name": "tagline",
+          "type": "text",
+          "label": "Footer Tagline",
+          "placeholder": "Crafted with timeless elegance."
+        }
+      ]
+    },
+    "contactSection": {
+      "type": "section",
+      "label": "Contact Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "Inquiries"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Contact Title",
+          "placeholder": "Let's Begin Crafting Your Event"
+        },
+        {
+          "name": "description",
+          "type": "textarea",
+          "label": "Contact Description",
+          "placeholder": "We accept a limited number of commissions each year to ensure uncompromising dedication to every detail."
+        },
+        {
+          "name": "buttonText",
+          "type": "text",
+          "label": "Button Text",
+          "placeholder": "Send Inquiry via WhatsApp"
+        },
+        {
+          "name": "phone",
+          "type": "text",
+          "label": "Phone Number",
+          "placeholder": "+91 12345 67890"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "Email Address",
+          "placeholder": "concierge@luminaevents.com"
+        },
+        {
+          "name": "address",
+          "type": "text",
+          "label": "Office Address",
+          "placeholder": "Mumbai, Maharashtra - 421601"
+        },
+        {
+          "name": "instagram",
+          "type": "text",
+          "label": "Instagram Handle",
+          "placeholder": "@luminaevents.official"
+        },
+        {
+          "name": "whatsapp",
+          "type": "text",
+          "label": "WhatsApp Number",
+          "placeholder": "1234567890"
+        }
+      ]
+    },
+    "servicesSection": {
+      "type": "dynamic-section",
+      "label": "Services Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "Bespoke Offerings"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Section Title",
+          "placeholder": "Our Signature Services"
+        },
+        {
+          "name": "services",
+          "type": "dynamic-array",
+          "label": "Services",
+          "itemFields": [
+            {
+              "name": "title",
+              "type": "text",
+              "label": "Service Title",
+              "placeholder": "Wedding Planning"
+            },
+            {
+              "name": "desc",
+              "type": "textarea",
+              "label": "Service Description",
+              "placeholder": "Comprehensive design, styling, and coordination for luxury weddings worldwide."
+            },
+            {
+              "name": "image",
+              "type": "image",
+              "label": "Service Image URL",
+              "placeholder": "Image URL"
+            }
+          ],
+          "placeholder": "Wedding Planning | Comprehensive design, styling, and coordination for luxury weddings worldwide. | Image URL, Corporate Events | High-profile brand galas, executive retreats, and memorable product launches. | Image URL"
+        }
+      ]
+    },
+    "portfolioSection": {
+      "type": "dynamic-section",
+      "label": "Portfolio Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "Visual Stories"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Section Title",
+          "placeholder": "Selected Portfolio"
+        },
+        {
+          "name": "items",
+          "type": "dynamic-array",
+          "label": "Portfolio Items",
+          "itemFields": [
+            {
+              "name": "title",
+              "type": "text",
+              "label": "Project Title",
+              "placeholder": "The Tuscan Romance"
+            },
+            {
+              "name": "category",
+              "type": "text",
+              "label": "Category/Location",
+              "placeholder": "Florence, Italy"
+            },
+            {
+              "name": "image",
+              "type": "image",
+              "label": "Image URL",
+              "placeholder": "Image URL"
+            }
+          ],
+          "placeholder": "The Tuscan Romance | Florence, Italy | Image URL, Château Gala | Paris, France | Image URL"
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "type": "dynamic-section",
+      "label": "Testimonials Section",
+      "fields": [
+        {
+          "name": "badge",
+          "type": "text",
+          "label": "Badge/Label",
+          "placeholder": "Words of Appreciation"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Section Title",
+          "placeholder": "From Our Clients"
+        },
+        {
+          "name": "testimonials",
+          "type": "dynamic-array",
+          "label": "Testimonials",
+          "itemFields": [
+            {
+              "name": "quote",
+              "type": "textarea",
+              "label": "Testimonial Quote",
+              "placeholder": "Lumina Events made our destination wedding in Lake Como feel utterly effortless."
+            },
+            {
+              "name": "author",
+              "type": "text",
+              "label": "Client Name",
+              "placeholder": "Sarah Wilson"
+            },
+            {
+              "name": "role",
+              "type": "text",
+              "label": "Client Role",
+              "placeholder": "Bride"
+            }
+          ],
+          "placeholder": "Lumina Events made our destination wedding in Lake Como feel utterly effortless. | Sarah Wilson | Bride, The level of composure and creative direction provided for our corporate gala was unmatched. | Marcus Vance | Corporate Executive"
+        }
+      ]
+    }
+  }
+}

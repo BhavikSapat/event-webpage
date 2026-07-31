@@ -5,11 +5,11 @@ import EventPlanner from "./EventPlanner";
 const page = async () => {
   try {
     const Response = await fetch(
-      "https://store-admin-uat.actifyzone.com/store-uat/api/dynamic-template",
+      "https://ecom-admin-uat.actifyzone.com/ecom-admin-uat/api/dynamic-template",
       {
         method: "GET",
         headers: {
-          "X-Tenant-ID": "20",
+          "X-Tenant-ID": "26",
         },
       },
     );
@@ -32,7 +32,7 @@ const page = async () => {
     );
   } catch (error) {
     console.error("Server not connected!", error);
-    
+
     return (
       <div>
         <EventPlanner data={{}} />
